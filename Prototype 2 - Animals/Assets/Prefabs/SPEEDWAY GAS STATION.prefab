@@ -1462,6 +1462,8 @@ GameObject:
   - component: {fileID: 799196446245058037}
   - component: {fileID: 799196445637052505}
   - component: {fileID: 937980416}
+  - component: {fileID: 180175348498568736}
+  - component: {fileID: 3125294546142770896}
   m_Layer: 0
   m_Name: SPEEDWAY GAS STATION
   m_TagString: Untagged
@@ -1531,6 +1533,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 418603f15c899464a952bfd3d6ca1725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &180175348498568736
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799196446252580669}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.852924, y: 36.842434, z: 44.426075}
+  m_Center: {x: -0.41038513, y: 17.921215, z: 3.761835}
+--- !u!114 &3125294546142770896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799196446252580669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a7e7e386bf76f428968271eaa69237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &799196446252581041

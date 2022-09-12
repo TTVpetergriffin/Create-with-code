@@ -2037,6 +2037,8 @@ GameObject:
   - component: {fileID: 430201456129459391}
   - component: {fileID: 430201454430500412}
   - component: {fileID: 1547634031}
+  - component: {fileID: 1292071747932501927}
+  - component: {fileID: 2210506257008501630}
   m_Layer: 0
   m_Name: what the dog doin
   m_TagString: Untagged
@@ -2137,6 +2139,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 418603f15c899464a952bfd3d6ca1725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1292071747932501927
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430201456136586269}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0782723, y: 0.1964516, z: 0.2623228}
+  m_Center: {x: -0.000076301396, y: 0.096067935, z: 0.031249434}
+--- !u!114 &2210506257008501630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430201456136586269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a7e7e386bf76f428968271eaa69237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &430201456136587019
