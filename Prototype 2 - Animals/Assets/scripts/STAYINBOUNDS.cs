@@ -19,6 +19,7 @@ public class STAYINBOUNDS : MonoBehaviour
             Destroy(gameObject); 
         } else if (transform.position.z < lowerBound)
         {
+            Debug.Log("You suck lol");
             Destroy(gameObject);
         } 
     }
