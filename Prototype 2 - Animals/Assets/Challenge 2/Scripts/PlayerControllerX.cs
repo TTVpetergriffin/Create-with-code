@@ -5,18 +5,24 @@ using UnityEngine;
 public class PlayerControllerX : MonoBehaviour
 {
     public GameObject dogPrefab;
-    private GameObject dog;
-    bool cd = false;
+    public float fireDelay = 0.1f;
 
     // Update is called once per frame
     void Update()
     {
+        fireDelay -= 0.1f;
+        Debug.Log("fireDelay: " + fireDelay);
         // On spacebar press, send dog
-        if (Input.GetKeyDown(KeyCode.Space))
-            if (dog == null)
+        if (Input.GetKeyDown(KeyCode.Space) && fireDelay <= 0)
         {
-            dog = Instantiate(dogPrefab, transform.position, dogPrefab.transform.rotation);
-                if (dog != null) cd = true;
+         Instantiate(dogPrefab, transform.position, dogPrefab.transform.rotation);
+            fireDelay = 40f;
+            Debug.Log("fireDelay after instantiate: " + fireDelay);
+
+        }
+        else
+        {
+            Debug.Log("not Delayed");
         }
     }
 }
