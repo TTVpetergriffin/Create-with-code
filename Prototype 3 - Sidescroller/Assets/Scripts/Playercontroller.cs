@@ -9,6 +9,7 @@ public class Playercontroller : MonoBehaviour
     private Rigidbody playerRb;
     public float gravityModifier;
     public bool isOnGround = true;
+    public bool gameOver = false;
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
