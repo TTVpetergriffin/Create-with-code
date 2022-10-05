@@ -5,10 +5,13 @@ using UnityEngine;
 public class PlayerControllerX : MonoBehaviour
 {
     public bool gameOver;
+    public bool isOnGround;
 
     public float floatForce;
     private float gravityModifier = 1.5f;
     private Rigidbody playerRb;
+    private float yUpperLimit = 15.91f;
+    private float yLowerLimit = -0.43f;
 
     public ParticleSystem explosionParticle;
     public ParticleSystem fireworksParticle;
@@ -34,7 +37,7 @@ public class PlayerControllerX : MonoBehaviour
     void Update()
     {
         // While space is pressed and player is low enough, float up
-        if (Input.GetKey(KeyCode.Space) && !gameOver)
+        if (Input.GetKey(KeyCode.Space) && !gameOver && transform.position.y < yUpperLimit)
         {
             playerRb.AddForce(Vector3.up * floatForce);
         }
@@ -58,9 +61,6 @@ public class PlayerControllerX : MonoBehaviour
             fireworksParticle.Play();
             playerAudio.PlayOneShot(moneySound, 1.0f);
             Destroy(other.gameObject);
-
         }
-
     }
-
 }
