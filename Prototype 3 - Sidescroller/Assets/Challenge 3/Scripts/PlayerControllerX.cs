@@ -7,11 +7,12 @@ public class PlayerControllerX : MonoBehaviour
     public bool gameOver;
     public bool isOnGround;
 
+    public float bounceForce;
     public float floatForce;
     private float gravityModifier = 1.5f;
     private Rigidbody playerRb;
     private float yUpperLimit = 15.91f;
-    private float yLowerLimit = -0.43f;
+    private float ylowerLimit = -0.42f;
 
     public ParticleSystem explosionParticle;
     public ParticleSystem fireworksParticle;
@@ -19,6 +20,7 @@ public class PlayerControllerX : MonoBehaviour
     private AudioSource playerAudio;
     public AudioClip moneySound;
     public AudioClip explodeSound;
+    public AudioClip bounceSound;
 
 
     // Start is called before the first frame update
@@ -40,6 +42,11 @@ public class PlayerControllerX : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && !gameOver && transform.position.y < yUpperLimit)
         {
             playerRb.AddForce(Vector3.up * floatForce);
+        }
+        if (transform.position.y < ylowerLimit)
+        {
+            playerRb.AddForce(Vector3.up * bounceForce);
+            playerAudio.PlayOneShot(bounceSound, 1.0f);
         }
     }
 
