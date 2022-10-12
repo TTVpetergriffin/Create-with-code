@@ -6,10 +6,13 @@ public class spawnManager : MonoBehaviour
 {
     public GameObject enemyPrefab;
     private float spawnRange = 9;
+    public int policeCount;
+    public int waveNumber = 0;
+    public GameObject Steroids;
     // Start is called before the first frame update
     void Start()
     {
-        SpawnEnemyWave(3);
+        Instantiate(Steroids, GenerateSpawnPosition(), Steroids.transform.rotation);
     }
     
     
@@ -17,7 +20,8 @@ public class spawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < -10) { Destroy(gameObject); }
+        policeCount = FindObjectsOfType<Enemy>().Length;
+        if (policeCount == 0) { Instantiate(Steroids, GenerateSpawnPosition(), Steroids.transform.rotation); waveNumber++;  SpawnEnemyWave(waveNumber); }
      }
     private Vector3 GenerateSpawnPosition()
     {
