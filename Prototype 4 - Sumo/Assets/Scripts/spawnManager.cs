@@ -12,7 +12,6 @@ public class spawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(Steroids, GenerateSpawnPosition(), Steroids.transform.rotation);
     }
     
     
@@ -21,8 +20,9 @@ public class spawnManager : MonoBehaviour
     void Update()
     {
         policeCount = FindObjectsOfType<Enemy>().Length;
-        if (policeCount == 0) { Instantiate(Steroids, GenerateSpawnPosition(), Steroids.transform.rotation); waveNumber++;  SpawnEnemyWave(waveNumber); }
-     }
+        if (policeCount == 0) {waveNumber++;  SpawnEnemyWave(waveNumber); }
+        if (policeCount == 0) {Instantiate(Steroids, GenerateSpawnPosition(), Steroids.transform.rotation);}
+    }
     private Vector3 GenerateSpawnPosition()
     {
         float spawnPosX = Random.Range(-spawnRange, spawnRange);

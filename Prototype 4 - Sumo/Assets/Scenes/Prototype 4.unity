@@ -231,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1081398694408566063, guid: 9ab986c4919c43a4aaa6195b87cd83e4, type: 3}
   policeCount: 0
-  waveNumber: 1
+  waveNumber: 0
   Steroids: {fileID: 8733326022968609241, guid: 49919b4fdefa9154c93f4434c0e827d8, type: 3}
 --- !u!4 &250403647
 Transform:
