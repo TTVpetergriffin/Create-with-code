@@ -6,7 +6,6 @@ public class SpawnManagerX : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public GameObject powerupPrefab;
-    private EnemyPrefab
 
     private float spawnRangeX = 10;
     private float spawnZMin = 15; // set min spawn Z
@@ -16,7 +15,8 @@ public class SpawnManagerX : MonoBehaviour
     public int waveCount = 0;
 
 
-    public GameObject player; 
+    public GameObject player;
+    private GameObject Enemy;
 
     // Update is called once per frame
     void Update()
@@ -26,6 +26,7 @@ public class SpawnManagerX : MonoBehaviour
         if (enemyCount == 0)
         {
             SpawnEnemyWave(waveCount);
+            GameObject.Find("Enemy").GetComponent<EnemyX>().enemySpeed = -+ 2000.0f;
         }
 
     }
@@ -68,5 +69,8 @@ public class SpawnManagerX : MonoBehaviour
         player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
     }
-
+    void Start()
+    {
+        
+    }
 }
