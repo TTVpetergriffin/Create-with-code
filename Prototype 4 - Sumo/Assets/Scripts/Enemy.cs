@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float enemySpeed;
+    public float Speed;
     private Rigidbody enemyRb;
     private GameObject player;
     // Start is called before the first frame update
@@ -12,14 +12,13 @@ public class Enemy : MonoBehaviour
     {
         enemyRb = GetComponent<Rigidbody>();
         player = GameObject.Find("donutSprinkleFromBlender");
-        enemySpeed = 200f;
     }
 
     // Update is called once per frame
     void Update()
     {
         Vector3 lookDirection = (player.transform.position - transform.position).normalized;
-        enemyRb.AddForce( lookDirection * enemySpeed);
+        enemyRb.AddForce( lookDirection * Speed);
         if (transform.position.y < -10) { Destroy(gameObject);  }
     }
 }

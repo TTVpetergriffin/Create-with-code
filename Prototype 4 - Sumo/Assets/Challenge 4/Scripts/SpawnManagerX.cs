@@ -21,12 +21,12 @@ public class SpawnManagerX : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        enemyCount = FindObjectsOfType<EnemyX>().Length;
 
         if (enemyCount == 0)
         {
             SpawnEnemyWave(waveCount);
-            GameObject.Find("Enemy").GetComponent<EnemyX>().enemySpeed = -+ 2000.0f;
+            GameObject.Find("Enemy(Clone)").GetComponent<EnemyX>().Speed = -+ -200.0f;
         }
 
     }

@@ -7,6 +7,7 @@ public class EnemyX : MonoBehaviour
     private Rigidbody enemyRb;
     private GameObject playerGoal;
     public GameObject enemyPrefab;
+    public float Speed;
 
 
     // Start is called before the first frame update
@@ -14,7 +15,7 @@ public class EnemyX : MonoBehaviour
     {
         enemyRb = GetComponent<Rigidbody>();
         playerGoal = GameObject.Find("Player Goal");
-        enemySpeed = 200f;
+        
     }
 
     // Update is called once per frame
@@ -22,7 +23,7 @@ public class EnemyX : MonoBehaviour
     {
         // Set enemy direction towards player goal and move there
         Vector3 lookDirection = (playerGoal.transform.position - transform.position).normalized;
-        enemyRb.AddForce(lookDirection * enemySpeed * Time.deltaTime);
+        enemyRb.AddForce(lookDirection * Speed * Time.deltaTime);
 
     }
 
@@ -37,8 +38,5 @@ public class EnemyX : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
-    [HideInInspector]
-    public float enemySpeed;
 }
