@@ -7,23 +7,24 @@ public class EnemyX : MonoBehaviour
     private Rigidbody enemyRb;
     private GameObject playerGoal;
     public GameObject enemyPrefab;
-    public float Speed;
-
+    public float enemySpeed;
+    public int enemyCount;
+    private GameObject Enemy;
 
     // Start is called before the first frame update
     void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
         playerGoal = GameObject.Find("Player Goal");
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+        enemyCount = FindObjectsOfType<EnemyX>().Length;
         // Set enemy direction towards player goal and move there
         Vector3 lookDirection = (playerGoal.transform.position - transform.position).normalized;
-        enemyRb.AddForce(lookDirection * Speed * Time.deltaTime);
+        enemyRb.AddForce(lookDirection * enemySpeed * Time.deltaTime);
 
     }
 

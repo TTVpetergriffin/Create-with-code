@@ -126,4 +126,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 8932280921958007952}
-  enemySpeed: 0
+  Speed: 0
+  enemyCount: 0

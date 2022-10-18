@@ -13,6 +13,7 @@ public class SpawnManagerX : MonoBehaviour
 
     public int enemyCount;
     public int waveCount = 0;
+    public float enemySpeed;
 
 
     public GameObject player;
@@ -26,7 +27,7 @@ public class SpawnManagerX : MonoBehaviour
         if (enemyCount == 0)
         {
             SpawnEnemyWave(waveCount);
-            GameObject.Find("Enemy(Clone)").GetComponent<EnemyX>().Speed = -+ -200.0f;
+            enemySpeed += 600f;
         }
 
     }
