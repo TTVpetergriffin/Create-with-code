@@ -11,6 +11,8 @@ public class PlayerControllerX : MonoBehaviour
     public bool hasPowerup;
     public GameObject powerupIndicator;
     public int powerUpDuration = 5;
+    private bool speedboost;
+    public ParticleSystem Dirt;
 
     private float normalStrength = 10; // how hard to hit enemy without powerup
     private float powerupStrength = 25; // how hard to hit enemy with powerup
@@ -19,6 +21,7 @@ public class PlayerControllerX : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody>();
         focalPoint = GameObject.Find("Focal Point");
+        speedboost = true;
     }
 
     void Update()
@@ -29,6 +32,14 @@ public class PlayerControllerX : MonoBehaviour
 
         // Set powerup indicator position to beneath player
         powerupIndicator.transform.position = transform.position + new Vector3(0, -0.6f, 0);
+        if (Input.GetKey(KeyCode.Space) && speedboost)
+        {
+            speed = 1000;
+            StartCoroutine(speedCooldown());
+            Debug.Log("speed!!");
+            Dirt.Play();
+
+        }
 
     }
 
@@ -72,7 +83,20 @@ public class PlayerControllerX : MonoBehaviour
 
         }
     }
-
-
+    IEnumerator speedCooldown()
+    {
+        yield return new WaitForSeconds(6);
+        speed = 500;
+        speedboost = false;
+        StartCoroutine (speedwait());
+        Debug.Log("speedcooldown");
+        Dirt.Stop();
+    }
+    IEnumerator speedwait()
+    {
+        yield return new WaitForSeconds(10);
+        speedboost = true;
+        Debug.Log("speedwait");
+    }
 
 }
