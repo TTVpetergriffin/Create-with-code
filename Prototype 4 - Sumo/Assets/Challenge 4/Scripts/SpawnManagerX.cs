@@ -27,7 +27,7 @@ public class SpawnManagerX : MonoBehaviour
         if (enemyCount == 0)
         {
             SpawnEnemyWave(waveCount);
-            enemySpeed += 600f;
+            enemySpeed += 100f;
         }
 
     }
@@ -72,6 +72,5 @@ public class SpawnManagerX : MonoBehaviour
     }
     void Start()
     {
-        
     }
 }
