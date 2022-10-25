@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class playercontroller : MonoBehaviour
 {
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey("w"))
+        {
+            transform.position += Vector3.forward * speed * Time.deltaTime;
+        }
     }
 }
