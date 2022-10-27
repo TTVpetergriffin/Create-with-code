@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public float xBorder = 9.33f;
+    public float zBorder = 9.51f;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,8 +34,19 @@ public class PlayerController : MonoBehaviour
         }
         if (transform.position.x > xBorder)
         {
-           new Vector3(xBorder, transform.position.y, transform.position.z);
-            Debug.Log("bawls");
+            transform.position = new Vector3(xBorder, transform.position.y, transform.position.z);
+        }
+        if (transform.position.x < -xBorder)
+        {
+            transform.position = new Vector3(-xBorder, transform.position.y, transform.position.z);
+        }
+        if (transform.position.z > zBorder)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, zBorder);
+        }
+        if (transform.position.z < -zBorder)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -zBorder);
         }
     }
 }

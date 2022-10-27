@@ -14,6 +14,10 @@ public class BlueEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameObject.FindGameObjectsWithTag("Player").Length == 1)
+        {
+            transform.position += Vector3.back * speed * Time.deltaTime;
+        }
         
     }
 }
