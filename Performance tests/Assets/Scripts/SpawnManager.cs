@@ -16,8 +16,8 @@ public class SpawnManager : MonoBehaviour
     {
      
     }
-    IEnumerator spawnbad()
-    {
+    //IEnumerator spawnbad()
+    //{
 
-    }
+    //}
 }
