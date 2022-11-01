@@ -20,4 +20,11 @@ public class Enemy : MonoBehaviour
         }
         
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "player")
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 }

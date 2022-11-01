@@ -19,4 +19,11 @@ public class Bullet : MonoBehaviour
             transform.position += Vector3.back * speed * Time.deltaTime;
         }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "player")
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 }
