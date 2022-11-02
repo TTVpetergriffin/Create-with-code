@@ -18,7 +18,10 @@ public class Enemy : MonoBehaviour
         {
             transform.position += Vector3.back * speed * Time.deltaTime;
         }
-        
+        if (transform.position.z < -12.43684)
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {

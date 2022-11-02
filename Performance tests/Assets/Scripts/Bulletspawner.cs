@@ -18,7 +18,7 @@ public class Bulletspawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.FindGameObjectsWithTag("Player").Length == 0)
+        if (GameObject.FindGameObjectsWithTag("Player").Length == 0 || transform.position.z < -12.43684)
         {
             Destroy(gameObject);
         }

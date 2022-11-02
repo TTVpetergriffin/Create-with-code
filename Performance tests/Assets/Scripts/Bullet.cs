@@ -18,10 +18,14 @@ public class Bullet : MonoBehaviour
         {
             transform.position += Vector3.back * speed * Time.deltaTime;
         }
+        if (transform.position.z < -12.43684)
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "player")
+        if (collision.gameObject.name == "player" || collision.gameObject.tag == "Mball")
         {
             Destroy(collision.gameObject);
         }
