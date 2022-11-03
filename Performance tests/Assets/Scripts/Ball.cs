@@ -25,9 +25,10 @@ public class Ball : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet" || (collision.gameObject.tag == "enemy"))
         {
             Destroy(collision.gameObject);
+            Destroy(this.gameObject);
         }
     }
 }

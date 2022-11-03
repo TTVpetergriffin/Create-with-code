@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 2193995226425429291}
   m_Layer: 0
   m_Name: blackEnemy
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
