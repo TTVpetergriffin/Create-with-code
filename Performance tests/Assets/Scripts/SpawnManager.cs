@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject BlackEnemy;
+    public GameObject BlueEnemy;
     private float xBorder = 9.33f;
     private float zBorder = 9.51f;
     private bool CD;
@@ -17,6 +18,8 @@ public class SpawnManager : MonoBehaviour
             StartCoroutine(SpawnEvil());
 
         }
+        Instantiate(BlackEnemy, GeneratedPosition(), Quaternion.identity);
+        Instantiate(BlueEnemy, GeneratedPosition(), Quaternion.identity);
     }
 
     // Update is called once per frame
