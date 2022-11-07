@@ -537,8 +537,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8a017992f458bc46a5f3630dfe9f654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BlackEnemy: {fileID: 3376344524946552215, guid: 2891b4807eaae9c47b567a2796f66c0c, type: 3}
-  BlueEnemy: {fileID: 5678373788349913280, guid: eb3a7a52aaf64d94b82f2df690897449, type: 3}
+  Enemies:
+  - {fileID: 3376344524946552215, guid: 2891b4807eaae9c47b567a2796f66c0c, type: 3}
+  - {fileID: 5678373788349913280, guid: eb3a7a52aaf64d94b82f2df690897449, type: 3}
 --- !u!4 &1790769469
 Transform:
   m_ObjectHideFlags: 0

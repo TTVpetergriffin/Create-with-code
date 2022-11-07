@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject BlackEnemy;
-    public GameObject BlueEnemy;
-    private float xBorder = 9.33f;
-    private float zBorder = 9.51f;
+    public GameObject[] Enemies;
+    //private float xBorder = 9.33f;
+    //private float zBorder = 9.51f;
     private bool CD;
     // Start is called before the first frame update
     void Start()
@@ -18,8 +17,7 @@ public class SpawnManager : MonoBehaviour
             StartCoroutine(SpawnEvil());
 
         }
-        Instantiate(BlackEnemy, GeneratedPosition(), Quaternion.identity);
-        Instantiate(BlueEnemy, GeneratedPosition(), Quaternion.identity);
+        Instantiate(Enemies, GeneratedPosition(), Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -31,7 +29,7 @@ public class SpawnManager : MonoBehaviour
     IEnumerator SpawnEvil()
     {
         yield return new WaitForSeconds(5);
-        Instantiate(BlackEnemy, GeneratedPosition(), Quaternion.identity);
+        Instantiate(Enemies, GeneratedPosition(), Quaternion.identity);
         CD = false;
         Debug.Log("spawned");
         StartCoroutine(CoolDown());
