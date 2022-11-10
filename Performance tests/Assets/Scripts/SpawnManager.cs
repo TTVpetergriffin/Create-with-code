@@ -5,7 +5,6 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
 
-    public Coroutine coroutine;
     [SerializeField] GameObject[] Enemies;
     //private float xBorder = 9.33f;
     //private float zBorder = 9.51f;
@@ -27,11 +26,11 @@ public class SpawnManager : MonoBehaviour
     {
         if (GameObject.FindGameObjectsWithTag("Player").Length == 0)
         {
-            StopCoroutine(SpawnEvil);
+            StopAllCoroutines();
         }
     }
 
-    public Coroutine SpawnEvil()
+    IEnumerator SpawnEvil()
     {
         yield return new WaitForSeconds(5);
         int RandomEnemies = Random.Range(0, 2);
