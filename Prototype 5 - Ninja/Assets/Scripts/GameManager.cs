@@ -5,6 +5,8 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public bool isGameActive;
+    public TextMeshProUGUI gameOverText;
     private int score;
     public TextMeshProUGUI scoreText;
     public List<GameObject> targets;
@@ -13,8 +15,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnTarget());
-        score = 0;
-        scoreText.text = "Score: " + score;
+        UpdateScore(0);
+        gameOverText.gameObject.SetActive(true);
+        isGameActive = true;
     }
 
     // Update is called once per frame
@@ -24,11 +27,26 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator SpawnTarget()
     {
-        while (true)
+        while (isGameActive = true)
         {
             yield return new WaitForSeconds(spawnRate);
             int index = Random.Range(0, targets.Count);
             Instantiate(targets[index]);
         }
+    }
+    public void UpdateScore(int scoreToAdd)
+    {
+        score += scoreToAdd;
+        scoreText.text = "Score: " + score;
+    }
+    public void GameOver()
+    {
+        gameOverText.gameObject.SetActive(true);
+        isGameActive = false;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
+        if (!gameObject.CompareTag("Bad")) { GameManager.GameOver(); }
     }
 }
