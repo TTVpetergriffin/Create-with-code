@@ -37,11 +37,12 @@ public class Target : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void OnMouseDown()
     {
-        if (gameManager.isGameActive) {
+        if (gameManager.isGameActive)
+        {
             Destroy(gameObject);
             gameManager.UpdateScore(pointValue);
             Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
@@ -50,5 +51,6 @@ public class Target : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
+        if (!gameObject.CompareTag("Bad")) { gameManager.GameOver(); }
     }
 }
