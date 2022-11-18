@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject titleScreen;
     public Button restartButton;
     public bool isGameActive;
     public TextMeshProUGUI gameOverText;
@@ -21,10 +22,7 @@ public class GameManager : MonoBehaviour
     }
     public void StartGame()
     {
-        isGameActive = true;
-        StartCoroutine(SpawnTarget());
-        UpdateScore(0);
-        score = 0;
+        StartCoroutine(startg());
     }
     // Update is called once per frame
     void Update()
@@ -54,5 +52,15 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    IEnumerator startg()
+    {
+        yield return new WaitForSeconds(0);
+        isGameActive = true;
+        score = 0;
+        StartCoroutine(SpawnTarget());
+        UpdateScore(0);
+        titleScreen.gameObject.SetActive(false);
+        Debug.Log("started");
     }
 }
