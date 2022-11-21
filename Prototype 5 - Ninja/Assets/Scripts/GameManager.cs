@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public bool test;
     public GameObject titleScreen;
     public Button restartButton;
     public bool isGameActive;
@@ -18,11 +19,18 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    
+        test = false;
     }
-    public void StartGame()
+    public void StartGame(int difficulty)
     {
-        StartCoroutine(startg());
+        test = true;
+        isGameActive = true;
+        score = 0;
+        StartCoroutine(SpawnTarget());
+        UpdateScore(0);
+        titleScreen.gameObject.SetActive(false);
+        Debug.Log("Test: "+ test);
+        spawnRate /= difficulty;
     }
     // Update is called once per frame
     void Update()
@@ -52,15 +60,5 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-    IEnumerator startg()
-    {
-        yield return new WaitForSeconds(0);
-        isGameActive = true;
-        score = 0;
-        StartCoroutine(SpawnTarget());
-        UpdateScore(0);
-        titleScreen.gameObject.SetActive(false);
-        Debug.Log("started");
     }
 }

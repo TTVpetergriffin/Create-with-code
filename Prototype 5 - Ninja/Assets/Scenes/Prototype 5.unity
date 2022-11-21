@@ -393,6 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe7f21b65c9e25e48b24d71744b1101f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  test: 0
   titleScreen: {fileID: 227862921}
   restartButton: {fileID: 1820841700}
   isGameActive: 0
@@ -494,6 +495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4274b788e6e482c4a9dfa7e005255c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difficulty: 3
 --- !u!114 &298006645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,7 +542,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 209977696}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: RestartGame
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1106,6 +1108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4274b788e6e482c4a9dfa7e005255c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difficulty: 1
 --- !u!114 &1396396310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1152,7 +1155,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 209977696}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: RestartGame
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2068,6 +2071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4274b788e6e482c4a9dfa7e005255c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difficulty: 2
 --- !u!114 &1890343138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2114,7 +2118,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 209977696}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: RestartGame
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
