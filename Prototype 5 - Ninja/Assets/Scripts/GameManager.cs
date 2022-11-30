@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public bool test;
+    public TextMeshProUGUI TimeText;
+    private int time;
     public GameObject titleScreen;
     public Button restartButton;
     public bool isGameActive;
@@ -19,18 +20,17 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        test = false;
     }
     public void StartGame(int difficulty)
     {
-        test = true;
+        time = 60;
         isGameActive = true;
         score = 0;
         StartCoroutine(SpawnTarget());
         UpdateScore(0);
         titleScreen.gameObject.SetActive(false);
-        Debug.Log("Test: "+ test);
         spawnRate /= difficulty;
+        UpdateTime(0);
     }
     // Update is called once per frame
     void Update()
@@ -60,5 +60,12 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void UpdateTime(int TimeChange)
+    {
+        
+            time -= TimeChange;
+            TimeText.text = "Time: " + time;
+            Debug.Log("bawls");
     }
 }
