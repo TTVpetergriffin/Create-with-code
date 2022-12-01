@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class GameManagerX : MonoBehaviour
 {
     private int time;
-    public TextMeshProUGUI timetext;
+    public TextMeshProUGUI TimeText;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     public GameObject titleScreen;
@@ -33,6 +33,8 @@ public class GameManagerX : MonoBehaviour
         UpdateScore(0);
         titleScreen.SetActive(false);
         spawnRate /= difficulty;
+        time = 60;
+        UpdateTime(0);
     }
 
     // While game is active spawn a random target
@@ -88,5 +90,11 @@ public class GameManagerX : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    public void UpdateTime(int TimeChange)
+    {
 
+        time -= TimeChange;
+        TimeText.text = "Time: " + time;
+        Debug.Log("bawls");
+    }
 }
