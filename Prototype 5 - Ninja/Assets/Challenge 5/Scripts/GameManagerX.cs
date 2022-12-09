@@ -34,7 +34,7 @@ public class GameManagerX : MonoBehaviour
         UpdateScore(0);
         titleScreen.SetActive(false);
         spawnRate /= difficulty;
-        time = 60;
+        time = 5;
         UpdateTime(0);
         timecd = true;
     }
@@ -95,9 +95,9 @@ public class GameManagerX : MonoBehaviour
     public void UpdateTime(int TimeChange)
     {
 
-        while (timecd = true || isGameActive)
+        if (timecd = true || isGameActive)
         {
-            time--;
+            time --;
             TimeText.text = "Time: " + time;
             Debug.Log("bawls");
             timecd = false;
@@ -108,9 +108,17 @@ public class GameManagerX : MonoBehaviour
     IEnumerator timecooldown()
     {
         yield return new WaitForSeconds(1);
-        while (isGameActive)
+        if (isGameActive)
         {
             timecd = true;
+            UpdateTime(0);
+        }
+    }
+    public void Update()
+    {
+        if (time == 0 && isGameActive)
+        {
+            GameOver();
         }
     }
 }
